@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-step Subscription Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-light">
+    <header class="app-header">
+      <div class="logo-text">
+        <span class="logo-main">Amere Subscription</span>
+        <span class="logo-sub">Wizard</span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <span class="theme-toggle__icon">☾</span>
+      </button>
+    </header>
+
+    <main class="app">
+      <div class="app-card">
+        <!-- Sidebar with steps -->
+        <aside class="steps-sidebar" aria-label="Step progress">
+          <ol class="steps-list">
+            <li class="step-indicator is-active" data-step="1">
+              <span class="step-number">1</span>
+              <div class="step-labels">
+                <span class="step-label-small">Step 1</span>
+                <span class="step-label-main">Your info</span>
+              </div>
+            </li>
+            <li class="step-indicator" data-step="2">
+              <span class="step-number">2</span>
+              <div class="step-labels">
+                <span class="step-label-small">Step 2</span>
+                <span class="step-label-main">Select plan</span>
+              </div>
+            </li>
+            <li class="step-indicator" data-step="3">
+              <span class="step-number">3</span>
+              <div class="step-labels">
+                <span class="step-label-small">Step 3</span>
+                <span class="step-label-main">Add-ons</span>
+              </div>
+            </li>
+            <li class="step-indicator" data-step="4">
+              <span class="step-number">4</span>
+              <div class="step-labels">
+                <span class="step-label-small">Step 4</span>
+                <span class="step-label-main">Summary</span>
+              </div>
+            </li>
+          </ol>
+        </aside>
+
+        <!-- Main form content -->
+        <section class="form-area">
+          <form id="multi-step-form" novalidate>
+            <div class="step-progress">
+              <div class="step-progress__track">
+                <div class="step-progress__bar" id="step-progress-bar"></div>
+              </div>
+              <p class="step-progress__label" id="step-progress-label">Step 1 of 4</p>
+            </div>
+            <!-- Step 1: Personal info -->
+            <section class="step is-active" data-step="1" aria-labelledby="step-1-title">
+              <h1 id="step-1-title" class="step-title">Personal info</h1>
+              <p class="step-description">
+                Please provide your name, email address, and phone number.
+              </p>
+
+              <div class="field-group">
+                <label for="full-name" class="field-label">
+                  Name
+                  <span class="field-label__hint">(e.g. Stephen King)</span>
+                </label>
+                <input
+                  id="full-name"
+                  name="fullName"
+                  type="text"
+                  class="field-input"
+                  placeholder="Stephen King"
+                  autocomplete="name"
+                  data-autofocus
+                  required
+                />
+                <p class="field-error" data-error-for="full-name"></p>
+              </div>
+
+              <div class="field-group">
+                <label for="email" class="field-label">
+                  Email Address
+                  <span class="field-label__hint">(e.g. stephenking@lorem.com)</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  class="field-input"
+                  placeholder="stephenking@lorem.com"
+                  autocomplete="email"
+                  required
+                />
+                <p class="field-error" data-error-for="email"></p>
+              </div>
+
+              <div class="field-group">
+                <label for="phone" class="field-label">
+                  Phone Number
+                  <span class="field-label__hint">(e.g. +1 234 567 890)</span>
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  class="field-input"
+                  placeholder="+1 234 567 890"
+                  autocomplete="tel"
+                  required
+                />
+                <p class="field-error" data-error-for="phone"></p>
+              </div>
+            </section>
+
+            <!-- Step 2: Plan selection -->
+            <section class="step" data-step="2" aria-labelledby="step-2-title">
+              <h1 id="step-2-title" class="step-title">Select your plan</h1>
+              <p class="step-description">
+                You have the option of monthly or yearly billing.
+              </p>
+
+              <div class="plans">
+                <label class="plan-card">
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="arcade"
+                    class="plan-input"
+                    data-plan-id="arcade"
+                    data-autofocus
+                    checked
+                  />
+                  <div class="plan-card__body">
+                    <div class="plan-card__title">Arcade</div>
+                    <div class="plan-card__price" data-price-plan="arcade"></div>
+                    <div class="plan-card__tag" data-plan-tag="arcade"></div>
+                  </div>
+                </label>
+
+                <label class="plan-card">
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="advanced"
+                    class="plan-input"
+                    data-plan-id="advanced"
+                  />
+                  <div class="plan-card__body">
+                    <div class="plan-card__title">Advanced</div>
+                    <div class="plan-card__price" data-price-plan="advanced"></div>
+                    <div class="plan-card__tag" data-plan-tag="advanced"></div>
+                  </div>
+                </label>
+
+                <label class="plan-card">
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="pro"
+                    class="plan-input"
+                    data-plan-id="pro"
+                  />
+                  <div class="plan-card__body">
+                    <div class="plan-card__title">Pro</div>
+                    <div class="plan-card__price" data-price-plan="pro"></div>
+                    <div class="plan-card__tag" data-plan-tag="pro"></div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="billing-toggle">
+                <span class="billing-label billing-label--active" data-billing="monthly">Monthly</span>
+                <button
+                  type="button"
+                  id="billing-toggle"
+                  class="billing-toggle__switch"
+                  aria-label="Toggle yearly billing"
+                >
+                  <span class="billing-toggle__thumb"></span>
+                </button>
+                <span class="billing-label" data-billing="yearly">Yearly</span>
+              </div>
+
+              <p class="field-error" data-error-for="plan"></p>
+            </section>
+
+            <!-- Step 3: Add-ons -->
+            <section class="step" data-step="3" aria-labelledby="step-3-title">
+              <h1 id="step-3-title" class="step-title">Pick add-ons</h1>
+              <p class="step-description">
+                Add-ons help enhance your gaming experience.
+              </p>
+
+              <div class="addons">
+                <label class="addon-card">
+                  <input
+                    type="checkbox"
+                    class="addon-input"
+                    data-addon-id="online-service"
+                    data-autofocus
+                  />
+                  <div class="addon-card__body">
+                    <div class="addon-card__text">
+                      <div class="addon-card__title">Online service</div>
+                      <div class="addon-card__subtitle">Access to multiplayer games</div>
+                    </div>
+                    <div class="addon-card__price" data-price-addon="online-service"></div>
+                  </div>
+                </label>
+
+                <label class="addon-card">
+                  <input
+                    type="checkbox"
+                    class="addon-input"
+                    data-addon-id="larger-storage"
+                  />
+                  <div class="addon-card__body">
+                    <div class="addon-card__text">
+                      <div class="addon-card__title">Larger storage</div>
+                      <div class="addon-card__subtitle">Extra 1TB of cloud save</div>
+                    </div>
+                    <div class="addon-card__price" data-price-addon="larger-storage"></div>
+                  </div>
+                </label>
+
+                <label class="addon-card">
+                  <input
+                    type="checkbox"
+                    class="addon-input"
+                    data-addon-id="custom-profile"
+                  />
+                  <div class="addon-card__body">
+                    <div class="addon-card__text">
+                      <div class="addon-card__title">Customizable profile</div>
+                      <div class="addon-card__subtitle">Custom theme on your profile</div>
+                    </div>
+                    <div class="addon-card__price" data-price-addon="custom-profile"></div>
+                  </div>
+                </label>
+              </div>
+            </section>
+
+            <!-- Step 4: Summary -->
+            <section class="step" data-step="4" aria-labelledby="step-4-title">
+              <h1 id="step-4-title" class="step-title">Finishing up</h1>
+              <p class="step-description">
+                Double-check everything looks OK before confirming.
+              </p>
+
+              <div class="summary-card">
+                <div class="summary-plan">
+                  <div>
+                    <div class="summary-plan__name" id="summary-plan-name"></div>
+                    <button type="button" id="change-plan-btn" class="link-button">Change</button>
+                  </div>
+                  <div class="summary-plan__price" id="summary-plan-price"></div>
+                </div>
+                <div class="summary-addons" id="summary-addons"></div>
+              </div>
+
+              <div class="summary-total">
+                <span id="summary-total-label"></span>
+                <span id="summary-total-price" class="summary-total__price"></span>
+              </div>
+            </section>
+
+            <!-- Step 5: Payment -->
+            <section class="step" data-step="5" aria-labelledby="step-5-title">
+              <h1 id="step-5-title" class="step-title">Secure payment</h1>
+              <p class="step-description">
+                Enter your card details to complete your subscription. This is a demo payment
+                form, so no real card will be charged.
+              </p>
+
+              <div class="payment-card">
+                <div class="payment-card__header">
+                  <span class="payment-card__title">Card details</span>
+                  <span class="payment-card__brands">Visa · Mastercard · Amex</span>
+                </div>
+
+                <div class="field-group">
+                  <label for="card-name" class="field-label">
+                    Name on card
+                  </label>
+                  <input
+                    id="card-name"
+                    name="cardName"
+                    type="text"
+                    class="field-input"
+                    placeholder="e.g. Stephen King"
+                    autocomplete="cc-name"
+                    data-autofocus
+                  />
+                  <p class="field-error" data-error-for="card-name"></p>
+                </div>
+
+                <div class="field-group">
+                  <label for="card-number" class="field-label">
+                    Card number
+                  </label>
+                  <input
+                    id="card-number"
+                    name="cardNumber"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="19"
+                    class="field-input"
+                    placeholder="1234 5678 9012 3456"
+                    autocomplete="cc-number"
+                  />
+                  <p class="field-error" data-error-for="card-number"></p>
+                </div>
+
+                <div class="payment-card__grid">
+                  <div class="field-group">
+                    <label for="card-expiry" class="field-label">
+                      Expiry (MM/YY)
+                    </label>
+                    <input
+                      id="card-expiry"
+                      name="cardExpiry"
+                      type="text"
+                      inputmode="numeric"
+                      maxlength="5"
+                      class="field-input"
+                      placeholder="06/27"
+                      autocomplete="cc-exp"
+                    />
+                    <p class="field-error" data-error-for="card-expiry"></p>
+                  </div>
+                  <div class="field-group">
+                    <label for="card-cvc" class="field-label">
+                      CVC
+                    </label>
+                    <input
+                      id="card-cvc"
+                      name="cardCvc"
+                      type="text"
+                      inputmode="numeric"
+                      maxlength="4"
+                      class="field-input"
+                      placeholder="123"
+                      autocomplete="cc-csc"
+                    />
+                    <p class="field-error" data-error-for="card-cvc"></p>
+                  </div>
+                </div>
+
+                <p class="payment-card__hint">
+                  This payment step is for learning only and does not connect to a real
+                  payment provider.
+                </p>
+              </div>
+            </section>
+
+            <!-- Step 6: Thank you -->
+            <section class="step" data-step="6" aria-labelledby="step-6-title">
+              <div class="thank-you">
+                <div class="thank-you__icon">✓</div>
+                <h1 id="step-6-title" class="step-title">Thank you!</h1>
+                <p class="step-description">
+                  Thanks for confirming your subscription! We hope you have fun using our
+                  platform. If you ever need support, please feel free to email us.
+                </p>
+              </div>
+            </section>
+
+            <!-- Navigation buttons -->
+            <div class="step-nav">
+              <button type="button" id="back-btn" class="btn btn--ghost" disabled>
+                Go back
+              </button>
+              <button type="button" id="next-btn" class="btn btn--primary">
+                Next step
+              </button>
+              <button type="button" id="confirm-btn" class="btn btn--primary btn--confirm" hidden>
+                Confirm
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <small>Amere_bot subscription wizard – built for robustness and ease of use</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
