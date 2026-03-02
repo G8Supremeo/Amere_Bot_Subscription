@@ -1,8 +1,24 @@
-## Amere Subscription Wizard – Multi-step Form 👩‍💻✨
+<div align="center">
 
-Welcome to **Amere Subscription Wizard** – a multi-step form that didn’t get the memo that forms should be boring.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FF8ACD&height=230&section=header&text=Amere%20Subscription%20Wizard&fontSize=42&fontColor=ffffff&animation=twinkling" />
 
-This README is written as a **guided story** of the project: what it does, how it feels to use, and how it’s built under the hood, so a human (you) can enjoy reading it and an employer can see the serious engineering hiding behind the pink gradients.
+<h2>✨ Multi-step Chatbot Subscription Form ✨</h2>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=FF73C9&center=true&vCenter=true&width=520&lines=Sweet+chatbot-style+subscription+flow;Feminine+UI+with+soft+animations;Mock+payments+%26+local+saving;Built+with+HTML+%2B+CSS+%2B+JS" alt="Typing intro" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-ff6f91?style=for-the-badge&logo=html5&logoColor=ffffff" />
+  <img src="https://img.shields.io/badge/CSS3-fc85ae?style=for-the-badge&logo=css3&logoColor=ffffff" />
+  <img src="https://img.shields.io/badge/JavaScript-f9a8d4?style=for-the-badge&logo=javascript&logoColor=2d2a32" />
+</p>
+
+</div>
+
+Welcome to **Amere Subscription Wizard** – a multi-step, chatbot-flavoured subscription form for an imaginary AI assistant, dressed in gradients and micro‑animations instead of plain boxes.
+
+This README is a **visual story** of the project: what it does, how it feels to use, and how it’s built under the hood, so a human (you) can enjoy reading it and an employer can see the serious engineering hiding behind the pink gradients.
 
 ---
 
@@ -20,6 +36,32 @@ Users should be able to:
 - **Toggle themes**: Switch between a soft, feminine light theme and a sleek dark theme.
 - **Resume later**: Have most of their data remembered thanks to local persistence.
 
+### Chatbot-style walkthrough
+
+```text
+🧠 Amere Bot: Hey, welcome in! Ready to power up your conversations?
+
+You: Sure, what do you need?
+
+Step 1 – Your info
+  👉 "Just your name, email, and phone so I know who I'm chatting with."
+
+Step 2 – Choose your vibe
+  👉 "Pick a plan that fits how often you want me to talk with your users."
+
+Step 3 – Add some magic
+  👉 "Toggle extra add‑ons like online service, extra storage, and a custom profile."
+
+Step 4 – Quick recap
+  👉 "Here's your plan, add‑ons, and total – change anything before we seal the deal."
+
+Step 5 – Payment (demo)
+  👉 "Type in mock card details – I validate them, but no real money moves."
+
+Step 6 – All set
+  👉 "You’re in! Your subscription is active in this demo world."
+```
+
 ### Screenshot
 
 _(Add your own screenshots here – both desktop and mobile views work great.)_
@@ -32,8 +74,8 @@ and capture both light and dark themes for your portfolio.
 
 ### Links
 
-- **Solution URL**: _Add your Frontend Mentor solution link here_
-- **Live Site URL**: _Add your deployed Vercel URL here_
+- **Solution URL**: _https://github.com/G8Supremeo/Amere_Bot_Subscription_
+- **Live Site URL**: _https://amere-bot-form.vercel.app_
 
 ---
 
@@ -178,19 +220,6 @@ Things I’d like to explore next:
 - [MDN Web Docs](https://developer.mozilla.org/) – For checking HTML, CSS, and JS behavior.
 - [web.dev – Form Best Practices](https://web.dev/tags/forms/) – Great guidance on accessible, user‑friendly forms.
 - [Vercel Docs – Serverless Functions](https://vercel.com/docs/functions) – For wiring the `/api/save-form` endpoint.
-
----
-
-## AI collaboration
-
-I paired with an AI assistant to:
-
-- Brainstorm the overall architecture (steps, state structure, and validation flow).
-+- Design the feminine theme and micro‑interactions.
-- Sketch and refine the JS modules for state management, summary generation, and persistence.
-- Draft and polish this “animated” README text.
-
-The assistant suggested patterns and code, but I stayed in control of the implementation, wiring, and final design decisions.
 
 ---
 
